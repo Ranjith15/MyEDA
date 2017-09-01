@@ -1,0 +1,323 @@
+<html>
+	<head>
+		<xsl:variable name="scode" select="clientcode"/>
+		
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+		<META HTTP-EQUIV="Expires" CONTENT="-1"/>
+		
+		<script LANGUAGE="JavaScript">
+			javascript:history.go(1)
+		</script>
+		
+		<title>Fax Cover Sheet</title>
+		
+		<style type="text/css">
+		/* CSS Document */
+			body {margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333;}
+			td {font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333;}
+			a {font-family:Arial, Helvetica, sans-serif; color:#660000; font-size:12px;}
+			a:hover {font-family:Arial, Helvetica, sans-serif; color:#CC0000; font-size:12px;}
+			
+			.title {font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color:#4B5D62;}
+			.subtitle {font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color:#4B5D62;}
+			.heading {font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight:bold; color:#212121;}
+			.headingnormal{font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight:normal; color:#212121;}
+			
+			.error{color:red;}
+			.ok {color:green;}
+			
+			.callout {padding:10px; background-color:#FFFED7;}
+			
+			.pageHelp {font-family: Arial, Helvetica, sans-serif; font-size: 11px; color:#000000;}
+			
+			.footer_txt {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#57585A; background-color:#E4E5E9; text-align:center;}
+			.footer_lnk {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-align:center;}
+			
+			.welcome_txt {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; padding-left:10px;}
+			a.welcome_lnk {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-align:center;}
+			a.welcome_lnk:hover {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#CCCCCC; text-align:center;}
+			
+			.programTitle {font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#000000; text-align:center;}
+			
+			a.utility_lnk {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF;}
+			a.utility_lnk:hover {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#CCCCCC;}
+			
+			a.table_lnk {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#010204;}
+			a.table_lnk:hover {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#999999;}
+			
+			
+			.myProfile {padding:2px;}
+			
+			/* link */
+			.linkConfirm {font-family:Arial, Helvetica, sans-serif; font-size:24px; color:#660000; } 
+			
+			/* nav */
+			.nav_line {background-color:#253437;}
+			.nav_button {background-color:#DBDFE2;}
+			a.nav_lnk {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#1E1F23; text-decoration:none;}
+			a.nav_lnk:hover {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:underline;}
+			
+			/* wizard */
+			.wizTitle {font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000000; font-weight:bold;}
+			.wizHeading {font-family:Arial, Helvetica, sans-serif; font-size:24px; color:#666666; text-align:center;}
+			.wizStepOff {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#666666;}
+			.wizStepOn {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#660000; font-weight:bold;}
+			a.wizStepPrev {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#660000;}
+			a.wizStepPrev:hover {font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#CC0000;}
+			a.confirmedApp_lnk {font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#660000;}
+			a.confirmedApp_lnk:hover {font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#CC0000;}
+			.bg_wiz {background-color:#DBDFE2;}
+			.bg_wizBorder {background-color:#253437;}
+			
+			
+			/* alerts */
+			.alertHeading {font-family:Arial, Helvetica, sans-serif; font-size:13px; font-weight:bold; color:#990000;}
+			.alertDate {font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size:10px; font-weight:bold; color:#000000;}
+			.alertDesc {font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#000000;}
+			a.alert_lnk {font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#990000;}
+			a.alert_lnk:hover {font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#660000;}
+			
+			/* tables */
+			.bg_tblRow {background-color:#EEEEEE;}
+			.bg_tblRow_1 {background-color:#009966;}
+			.bg_tblRow_2 {background-color:#339999;}
+			.bg_tblRow_3 {background-color:#663399;}
+			.bg_tblRow_4 {background-color:#FFFF66;}
+			.bg_tblRow_5 {background-color:#00FFFF;}
+			.bg_tblRow_6 {background-color:#FF00FF;}
+			.bg_tblRow_7 {background-color:#FFFF00;}
+			.bg_heading {background-color:#E3E3E3;}
+
+		</style>
+		
+	</head>
+	
+	<script type="text/javascript">
+		var defaultDocumentType = "DT#506";
+	</script>		
+	
+	<body onload="FaxCover_onload();">
+		<script type="text/JavaScript">
+			<!-- checkValues(x); -->
+		</script>			
+		
+		<table width="600" cellspacing="0" cellpadding="10" align="center">
+			<tr>
+				<td align="center" style="font-size:large;"><b>DO NOT WRITE IN THE BOX BELOW.</b></td>
+			</tr>
+		</table>	
+		
+		<table style="border-style:solid;border-width:2;"
+			width="600" cellspacing="0" cellpadding="10" align="center" border="0" >
+			<tr>
+				<td>
+					<table width="600" cellspacing="0" cellpadding="10" align="center" border="0" >
+						<tr>
+							<td align="left" style="font-family:courier new;font-size:medium;">AN#application_number</td>
+							<td align="right" style="font-family:courier new;font-size:medium;" id="DocTypeString-medium">DT#506</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table width="600" border="0" cellspacing="0" cellpadding="1" align="center">
+			<tr>
+				<td style="font-size:large;"><center>&nbsp;</center></td>
+			</tr>
+			<tr>
+				<td style="font-size:large;"><center>FAX Cover Sheet</center></td>
+			</tr>
+			<tr>
+				<td style="font-size:large;"><center>&nbsp;</center></td>
+			</tr>
+		</table>
+		<table width="600" border="0" cellspacing="0" cellpadding="1" align="center">
+			<tr valign="top">
+				<td width="50%" >
+					<table>
+						<tr>
+							<td>To:</td>
+							<td ALIGN="LEFT">MC_to_friendly_name</td>
+						</tr>
+						<tr>
+							<td>From:</td>
+							<td ALIGN="LEFT">from_friendly_name</td>
+						</tr>
+						<tr>
+							<td><span>MC_employee_id_label</span></td>
+							<td ALIGN="LEFT">employee__id</td>
+						</tr>
+						<tr>
+							<td>Re:</td><td ALIGN="LEFT">Tuition Assistance Documentation</td>
+						</tr>	
+					</table>	
+				</td>
+				<td>
+					<table><tr><td>Fax:</td><td>
+						fax_phone_number
+					</td></tr><tr><td>Date:</td><td>		
+						generation_date
+						</td></tr><tr><td>Application Number:</td><td>		
+						application_number
+						</td></tr><tr><td>Pages:</td><td>		
+						<input type="text" name="page" size="2" maxlength="2"></input> ( with cover sheet )
+						</td></tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<p></p>			
+		<table width="600" border="0" cellspacing="0" cellpadding="1" align="center">
+			<tr>
+				<td>
+				 	 Comments:  
+				 	 	<textarea   
+				 	 		type="textarea" 
+				 	 		name="comments" 
+				 	 		rows="5"
+				 	 		cols="73"
+				 	 		id="CommentsTextArea">
+				 	 	</textarea>
+					
+				</td>
+			</tr>
+
+		</table>
+		<p></p>			
+		<table style="border-style:solid;border-width:2;" width="600" border="0" cellspacing="0" cellpadding="1" align="center">
+			<tr>
+				<td>
+					MC_instructions
+				</td>
+			</tr>
+
+		</table>
+		<p></p>			
+		
+		<table style="border-style:solid;border-width:2;" width="600" border="0" cellspacing="0" cellpadding="1" align="center">
+			<tr>
+				<td WIDTH="50%" align="center"  style="font-size:large;">
+					Documentation needed for tuition applications
+				</td>
+			</tr>
+		</table>
+		<table width="600" border="0" cellspacing="0" cellpadding="1" align="center">
+			<tr>
+				<td WIDTH="50%">
+					Please click on the appropriate box(es) below before printing:
+					<p></p><p></p>
+				</td>
+			</tr>
+			<tr>
+				<td nowrap="nowrap" >
+					<input onclick="onClickCheckbox(this, '505')" type="checkbox" name="grade" > </input>
+				 	Grade report or copy of Certificate
+				</td>
+			</tr>
+			<tr>
+				<td nowrap="nowrap" >
+					&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<input onclick="onClickCheckbox(this, '999')" type="checkbox" name="other"> </input>	
+				 	 Other: <br/><br/> 
+				 	 	<textarea   
+				 	 		type="textarea" 
+				 	 		name="otherComments" 
+				 	 		rows="5"
+				 	 		cols="73"
+							id="OtherTextarea">
+				 	 	</textarea>
+				</td>
+			</tr>
+		</table>	
+
+		<table width="600" border="0" cellspacing="0" cellpadding="1" align="center">
+			
+			<tr>
+				<td valign="bottom">
+				 	<br/><hr size="1" noshade="noshade"></hr>
+				</td>
+			</tr>
+		</table>				
+				
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td align="center">
+					<button onclick="javascript:printFaxCover();" type="button">Print</button>
+					&nbsp;&nbsp;&nbsp;
+					<button onclick="javascript:window.close();"  type="button">Close</button>					
+				</td>
+			</tr>
+			<tr>
+				<td align="center">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" style="font-size:large;"><b>CONFIDENTIAL</b></td>
+			</tr>
+			
+		</table>	
+	
+	</body>
+	<script>
+		var SelectedDTArray = new Object();
+		
+		function FaxCover_onload() {
+
+		}
+		
+		var newTextCode = "not set";
+		function setText(valueCode, text) {
+			var oldTextNode = document.getElementById("SelectedCategoryTextId").firstChild;
+			var newTextNode = document.createTextNode("\n" + text + "\n");
+			oldTextNode.parentNode.replaceChild(newTextNode, oldTextNode);
+			newTextCode = valueCode;		
+		}
+		
+		function onClickCheckbox(checkboxControl, documentTypeCode) {
+			if (checkboxControl.checked == true) {
+				SelectedDTArray[documentTypeCode] = "on";
+			} else {
+				SelectedDTArray[documentTypeCode] = "off";
+			}
+			var newDocTypeString = "";
+			for (var docType in SelectedDTArray) {
+				if (SelectedDTArray[docType] == "on") {
+					newDocTypeString += "," + "DT#" + docType;
+				}
+			}
+			
+			var oldTextNode = document.getElementById("DocTypeString-medium").firstChild;
+			var newTextNode = document.createTextNode(defaultDocumentType+newDocTypeString);
+			oldTextNode.parentNode.replaceChild(newTextNode, oldTextNode);
+		
+		}
+
+		function trim(stringToTrim) {
+			return stringToTrim.replace(/^\s+|\s+$/g,"");
+		}		
+		
+		function printFaxCover() {
+			var docTypeSelected = 0; // assume false
+			for (var docType in SelectedDTArray) {
+				var onOff = SelectedDTArray[docType];
+				if (onOff == "on") {
+					docTypeSelected = 1; // reset to true
+				}
+			}
+			if (SelectedDTArray[999] == "on") {
+				var otherTextarea = document.getElementById("OtherTextarea"); 
+				if (trim(otherTextarea.value) == "") {
+					alert("You selected \"Other\".  Please describe the document in the text box immediately following the \"Other\" check box.");
+				} else {
+					window.print();
+				}
+			} else {
+				window.print();
+			}
+		}
+	
+	</script>
+</html>

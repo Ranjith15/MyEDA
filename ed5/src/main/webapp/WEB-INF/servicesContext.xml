@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:amq="http://activemq.apache.org/schema/core" xmlns:jms="http://www.springframework.org/schema/jms"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd  
+       http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-4.2.xsd">
+
+	<!-- -->
+	<!-- Services -->
+	<!-- -->
+	
+	<bean id="applicationCommentService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="applicationCommentDao" />
+	</bean>
+
+	<bean id="ruleMessagesService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="ruleMessagesServiceDao" />
+	</bean>
+
+	<bean id="studentLoanService" class="com.edassist.service.impl.GenericServiceImpl">
+	</bean>
+
+	<bean id="eligibilityEventCommentService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="eligibilityEventCommentDao" />
+	</bean>
+
+	<bean id="parentRelatedApplicationRelationshipService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="parentRelatedApplicationRelationshipDao" />
+	</bean>
+
+	<bean id="courseMethodService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="courseMethodDao" />
+	</bean>
+	
+	<bean id="programEligibleDocumentTypeService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="programEligibleDocumentTypeDao" />
+	</bean>
+	
+	<bean id="programTypeService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="programTypeDao" />
+	</bean>
+	
+	<bean id="financialAidSourceService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="financialAidSourceDao" />
+	</bean>
+	
+	<bean id="accreditationService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="accreditationServiceDao" />
+	</bean>
+
+	<bean id="courseOfStudyService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="courseOfStudyServiceDao" />
+	</bean>
+	
+	<bean id="degreeObjectivesService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="degreeObjectivesDao" />
+	</bean>
+	
+	<bean id="participantCurrentEducationProfileService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="participantCurrentEducationProfileDao" />
+	</bean>
+	
+	<bean id="programCourseOfStudyService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="programCourseOfStudyDao" />
+	</bean>
+	
+	<bean id="programDegreeTypeService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="programDegreeTypeDao" />
+	</bean>
+
+	<bean id="approvalTypeService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="approvalTypeDao" />
+	</bean>
+
+	<bean id="paymentService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="paymentDao" />
+	</bean>
+
+	<bean id="refundsService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="refundsDao" />
+	</bean>
+
+	<bean id="reimburseStudentLoanAppHistoryService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="reimburseStudentLoanAppHistoryDao" />
+	</bean>
+
+	<bean id="stateService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="stateDao" />
+	</bean>
+
+	<bean id="applicationTypeService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="applicationTypeDao" />
+	</bean>
+
+	<bean id="expenseTypeService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="expenseTypeDao" />
+	</bean>
+
+	<bean id="propertyService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="propertyDao" />
+	</bean>
+
+	<bean id="defaultDocumentsService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="defaultDocumentsDao" />
+	</bean>
+	
+	<bean id="programProviderService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="programProviderDao" />
+	</bean>
+	
+	<bean id="wf_QueueService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="wf_QueueDao" />
+	</bean>
+	<bean id="participantExceptionRulesService" class="com.edassist.service.impl.GenericServiceImpl">
+		<property name="dao" ref="participantExceptionRulesDao" />
+	</bean>
+	
+</beans>

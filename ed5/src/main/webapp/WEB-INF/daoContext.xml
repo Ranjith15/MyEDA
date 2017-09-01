@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<!-- -->
+	<!-- DAOs -->
+	<!-- -->
+
+	<bean id="applicationCommentDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ApplicationComment" />
+	</bean>
+
+	<bean id="applicationCoursesDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ApplicationCourses" />
+	</bean>
+
+	<bean id="applicationStatusDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ApplicationStatus" />
+	</bean>
+
+	<bean id="reimburseBookAppDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ReimburseBookApp" />
+	</bean>
+
+	<bean id="ruleMessagesServiceDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.RuleMessages" />
+	</bean>
+
+	<bean id="eligibilityEventCommentDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.EligibilityEventComment" />
+	</bean>
+
+	<bean id="parentRelatedApplicationRelationshipDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ParentRelatedApplicationRelationship" />
+	</bean>
+
+	<bean id="courseMethodDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.CourseMethod" />
+	</bean>
+
+	<bean id="programEligibleDocumentTypeDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ProgramEligibleDocumentType" />
+	</bean>
+
+	<bean id="programTypeDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ProgramType" />
+	</bean>
+
+	<bean id="financialAidSourceDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.FinancialAidSource" />
+	</bean>
+
+	<bean id="accreditationServiceDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.AccreditingBody" />
+	</bean>
+
+	<bean id="courseOfStudyServiceDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.CourseOfStudy" />
+	</bean>
+
+	<bean id="degreeObjectivesDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.DegreeObjectives" />
+	</bean>
+
+	<bean id="participantCurrentEducationProfileDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ParticipantCurrentEducationProfile" />
+	</bean>
+
+	<bean id="programCourseOfStudyDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ProgramCourseOfStudy" />
+	</bean>
+
+	<bean id="programDegreeTypeDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ProgramDegreeType" />
+	</bean>
+
+	<bean id="approvalTypeDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ApprovalType" />
+	</bean>
+
+	<bean id="paymentDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.Payments" />
+	</bean>
+
+	<bean id="refundsDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.Refunds" />
+	</bean>
+
+	<bean id="reimburseStudentLoanAppHistoryDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ReimburseStudentLoanAppHistory" />
+	</bean>
+
+	<bean id="stateDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.State" />
+	</bean>
+
+	<bean id="applicationTypeDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ApplicationType" />
+	</bean>
+
+	<bean id="expenseTypeDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ExpenseType" />
+	</bean>
+
+	<bean id="propertyDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.Property" />
+	</bean>
+
+	<bean id="defaultDocumentsDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.DefaultDocuments" />
+	</bean>
+
+	<bean id="programProviderDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ProgramProviders" />
+	</bean>
+
+	<bean id="loanAggregatorUserDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.LoanAggregatorUserDomain" />
+	</bean>
+
+	<bean id="authenticationTokensDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.AuthenticationTokens" />
+	</bean>
+
+	<bean id="wf_QueueDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.WF_Queue" />
+	</bean>
+	<bean id="participantExceptionRulesDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ThinParticipantExceptionRules" />
+	</bean>
+
+	<bean id="userTypeDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.UserType" />
+	</bean>
+
+	<bean id="approvalHistoryDao" class="com.edassist.dao.impl.GenericDaoImpl">
+		<constructor-arg value="com.edassist.models.domain.ApprovalHistory" />
+	</bean>
+
+</beans>

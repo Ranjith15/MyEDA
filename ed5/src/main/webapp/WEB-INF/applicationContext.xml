@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd 
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages</value> <!-- (localized "messages_xx.properties" files) -->
+				<value>displaytag</value>
+			</list>
+		</property>
+	</bean>
+
+	<!--************************* -->
+	<!--*******JNDI CONF********* -->
+	<!--************************* -->
+
+
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/tamsDB" />
+	</bean>
+
+	<context:annotation-config />
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<import resource="jpaContext.xml" />
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>	
+	
+	<bean id="crmRestTemplate" class="org.springframework.web.client.RestTemplate">
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+			</list>
+		</property>
+		<property name="errorHandler">
+			<bean class="com.edassist.service.impl.crm.CrmResponseErrorHandler" />
+		</property>
+	</bean>
+	
+	<bean id="bufferingClientHttpRequestFactory" class="org.springframework.http.client.BufferingClientHttpRequestFactory">
+		<constructor-arg>
+	        <bean class=" org.springframework.http.client.SimpleClientHttpRequestFactory">
+	        	<property name="outputStreaming" value="false"></property>
+	        </bean>
+	    </constructor-arg>
+	</bean>
+	
+	<bean id="loanAggregatorRestTemplate" class="org.springframework.web.client.RestTemplate">
+		<property name="errorHandler">
+			<bean class="com.edassist.service.impl.loanaggregator.LoanAggregatorErrorHandler" />
+		</property>
+		<property name="requestFactory" ref="bufferingClientHttpRequestFactory" />
+	</bean>
+	
+	<import resource="daoContext.xml" />
+
+	<import resource="servicesContext.xml" />
+	
+	<bean id="multipartResolver" class="com.edassist.security.TamsMultipartResolver">
+		<property name="maxUploadSize" value="10000000" /> <!-- 10 MB -->
+	</bean>
+	
+	<bean name="swaggerConfig" class="com.edassist.documentation.SwaggerConfig" />
+	
+	<context:component-scan base-package="com.edassist.models" />
+	<context:component-scan base-package="com.edassist.dao" />
+	<context:component-scan base-package="com.edassist.service" />
+	<context:component-scan base-package="com.edassist.utils" />
+	<context:component-scan base-package="com.edassist.security" />
+	<context:component-scan base-package="com.edassist.controller" />
+	<context:component-scan base-package="com.edassist.job" />
+	
+</beans>
